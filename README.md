@@ -1,112 +1,58 @@
-# 🛒 MARKETPLACE DIGITAL PRODUCT API
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-Mini project REST API untuk platform marketplace produk digital, dibuat dengan Laravel. Semua fitur sudah diuji dan siap digunakan!
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
+## About Laravel
 
-## 📋 FITUR UTAMA 
-- CRUD lengkap untuk kategori produk
-- CRUD lengkap untuk produk digital
-- Relasi antar tabel kategori & produk
-- Fitur filter, search, dan sorting produk
-- Klasifikasi rating produk (Top Rated, Popular, Regular)
-- Validasi input yang sesuai standar
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-## 🛠️ CARA INSTALASI & SETUP
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-### 1. Clone Repositori
+## Learning Laravel
+
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+
+In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+
+You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+
+## Agentic Development
+
+Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+
 ```bash
-git clone https://github.com/[username-kamu]/marketplace-digital-product-api.git
-cd marketplace-digital-product-api
- 
- 
-### 2. Install Dependensi
- 
-bash
-  
-composer install 
- 
- 
-### 3. Konfigurasi Environment
- 
-Salin file  .env.example  menjadi  .env  dan isi konfigurasi database:
- 
-env
-  
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=marketplace_digital
-DB_USERNAME=root
-DB_PASSWORD=
- 
- 
-### 4. Jalankan Migrasi & Seeder
- 
-bash
-  
-# Jalankan migrasi database
-php artisan migrate
+composer require laravel/boost --dev
 
-# Isi data awal (kategori & produk contoh)
-php artisan db:seed --class=ProductCategorySeeder
-php artisan db:seed --class=ProductSeeder
-php artisan db:seed --class=UserSeeder
- 
- 
-### 5. Jalankan Server
- 
-bash
-  
-php artisan serve
- 
- 
-Server akan berjalan di  http://127.0.0.1:8000 
- 
-📌 ENDPOINT API YANG TERSEDIA
- 
-**MANAJEMEN KATEGORI PRODUK**
+php artisan boost:install
+```
 
-METHOD ENDPOINT DESKRIPSI 
-GET /api/categories Ambil semua kategori beserta produknya 
-GET /api/categories/{id} Ambil detail satu kategori beserta produknya 
-POST /api/categories Tambahkan kategori produk baru 
-PUT /api/categories/{id} Perbarui data kategori produk 
-DELETE /api/categories/{id} Hapus kategori (hanya jika tidak ada produk) 
+Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
 
-**MANAJEMEN PRODUK**
- 
-METHOD ENDPOINT DESKRIPSI 
-GET /api/products Ambil semua produk + fitur filter/search 
-GET /api/products/{id} Ambil detail satu produk 
-POST /api/products Tambahkan produk digital baru 
-PUT /api/products/{id} Perbarui data produk digital 
-DELETE /api/products/{id} Hapus produk digital 
- 
- 
- 
-🎁FITUR BONUS
- 
-**Filter & Search Produk**
- 
-Contoh penggunaan parameter pada endpoint  /api/products :
- 
-- Search     : /api/products?search=Laptop
-- Filter Kategori : /api/products?category_id=1
-- Sorting Harga   : /api/products?sort_by=price&order=asc
-- Kombinasi Semua : /api/products?search=Laptop&category_id=1&sort_by=rating&order=desc
- 
-**Klasifikasi Rating**
- 
-Setiap produk akan mendapatkan label otomatis berdasarkan skor rating:
- 
-- Top Rated  : Rating ≥ 8.5
-- Popular    : Rating 7.0 - 8.4
-- Regular    : Rating < 7.0
- 
-📧 KONTAK
- 
-Jika ada pertanyaan atau ingin berkontribusi, silakan hubungi:
- 
-- GitHub: [https://github.com/bahrul000000111-cmd]
-- Email: [bahrul000000111@gmail.com]
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
